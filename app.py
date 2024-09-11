@@ -70,7 +70,7 @@ def create_streamlit_ui() -> None:
     )
 
     st.title("Predicción de Precios de Viviendas en California")
-    st.subheader("Proyecto de Data Science")
+    st.subheader("Análisis de Precios de Vivienda con Machine Learning")
 
     st.write("Datos originales:")
     housing = load_housing_data()
@@ -81,7 +81,7 @@ def create_streamlit_ui() -> None:
 
     st.header("Predicción de Precios")
 
-    with st.expander("Ingrese las características de la vivienda"):
+    with st.expander("Selecciona los Detalles de la Vivienda para Predicción"):
         col1, col2 = st.columns(2)
         with col1:
             rooms = st.slider("Total Rooms", min_value=1, max_value=1000, value=300)
@@ -117,14 +117,14 @@ def create_streamlit_ui() -> None:
         final_model = train_model(housing_prepared, housing_labels)
         pred = final_model.predict(new_data_prepared)
 
-        st.subheader("Predicción")
-        st.success(f"Valor Predicho: ${pred[0]:,.2f}")
+        st.subheader("Valor Estimado de la Propiedad")
+        st.success(f"Valor: ${pred[0]:,.2f}")
 
         st.write("Precisión del modelo:", final_model.score(housing_prepared, housing_labels))
         st.write("Importancia de los atributos:", final_model.feature_importances_)
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     if not os.path.exists(os.path.join(HOUSING_PATH, "housing.csv")):
         st.write("Descargando datos...")
         fetch_housing_data()
