@@ -1,7 +1,7 @@
 # Proyecto-DATA SCIENCE
 
 ## Predicción de Precios de Viviendas en California
-Este proyecto consiste en una aplicación desarrollada con Streamlit que permite predecir los precios de viviendas en California utilizando el modelo de Random Forest Regressor.
+Este proyecto es una aplicación creada con Streamlit que utiliza el modelo Random Forest Regressor para realizar predicciones sobre los precios de viviendas en California.
 
 ## Autor
 Jair Delval Aguirre 355274
